@@ -1,6 +1,6 @@
-from main import app
-
+from iadvc import app
+from flask import render_template
 
 @app.route('/')
 def home():
-    return 'Ola Mundo, meu primeiro CRUD'
+    return render_template('home.html')
