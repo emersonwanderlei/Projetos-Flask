@@ -1,0 +1,27 @@
+
+<form method="post" class="mb-3">
+    <fieldset>
+        {{ formCreateUser.csrf_token }}
+        <div class="container text-center">
+            <div class="row">
+                <div class="col input-group">
+                    {{ formCreateUser.name.label (class='form-label m-2') }}
+                    {{ formCreateUser.name (class='form-control') }}
+                </div>
+                <div class="col input-group">
+                    {{ formCreateUser.email.label(class='form-label m-2') }}
+                    {{ formCreateUser.email (class='form-control') }}
+                </div>
+                <div class="col input-group">
+                    {{ formCreateUser.phone.label (class='form-label m-2') }}
+                    {{ formCreateUser.phone (class='form-control') }}
+                </div>
+                <div class="col mt-2">
+                    {{ formCreateUser.button_create (class='btn btn-success') }}
+                </div>
+    </fieldset>
+            </div>
+        </div>
+
+
+</form>

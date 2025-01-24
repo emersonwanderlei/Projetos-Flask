@@ -1,4 +1,4 @@
-from iadvc import app
+from crud_wandeco import app
 
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
