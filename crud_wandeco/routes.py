@@ -11,12 +11,13 @@ def home():
 
     return render_template('home.html', usuario=usuario, formCreateUser=formCreateUser)
 
-@app.route('/update/')
-def update():
-    formCreateUser = Form_create_user()
-    if 'button_update':
-        update = Usuario(username=formCreateUser.name.data, email=formCreateUser.email.data, phone=formCreateUser.phone.data)
-        Usuario.query.filter(update).first()
+@app.route('/update/<int:user_id>', methods=['POST'])
+def update(user_id):
+    user = Usuario.query.get(user_id)
+    if user and 'button_update':
+        database.session.add(user)
+        database.session.commit()
+        return redirect(url_for('home'))
 
 
     return redirect(url_for('home'))

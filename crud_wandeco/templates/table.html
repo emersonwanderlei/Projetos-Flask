@@ -18,7 +18,7 @@
           <td>{{usuarios.email}}</td>
           <td>{{usuarios.phone}}</td>
           <td class="d-flex">
-            <form action="{{ url_for('update') }}" method="POST">
+            <form action="{{ url_for('update', user_id=usuarios.id) }}" method="POST">
               <fieldset>
                 {{ formCreateUser.csrf_token }}
                 {{ formCreateUser.button_update(class='btn btn-warning') }}
