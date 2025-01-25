@@ -1,5 +1,5 @@
 
-<form action="{{ url_for('create') }}" method="post" class="mb-3">
+<form action="{% if editing %} {{ url_for('update', user_id=user_id) }} {% else %} {{ url_for('create') }} {% endif %}" method="post" class="mb-3">
     <fieldset>
         {{ formCreateUser.csrf_token }}
         <div class="container text-center">
@@ -17,11 +17,14 @@
                     {{ formCreateUser.phone (class='form-control') }}
                 </div>
                 <div class="col mt-2">
-                    {{ formCreateUser.button_create (class='btn btn-success') }}
+                    {% if editing %}
+                        {{ formCreateUser.button_update(class='btn btn-warning') }}
+                    {% else %}
+                        {{ formCreateUser.button_create(class='btn btn-success') }}
+                    {% endif %}
                 </div>
     </fieldset>
             </div>
         </div>
-
 
 </form>
