@@ -1,22 +1,37 @@
 
 
-<table class="table">
+<table class="table me-4">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>
         <th scope="col">Telefone</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
       {% for usuarios in usuario %}
-      <tr>
-        <th scope="row">{{usuarios.id}}</th>
-        <td>{{usuarios.name}}</td>
-        <td>{{usuarios.email}}</td>
-        <td>{{usuarios.phone}}</td>
-      </tr>
+        <tr>
+          <th scope="row">{{usuarios.id }}</th>
+          <td>{{usuarios.name}}</td>
+          <td>{{usuarios.email}}</td>
+          <td>{{usuarios.phone}}</td>
+          <td class="d-flex">
+            <form action="{{ url_for('update') }}" method="POST">
+              <fieldset>
+                {{ formCreateUser.csrf_token }}
+                {{ formCreateUser.button_update(class='btn btn-warning') }}
+              </fieldset>
+            </form>
+            <form action="{{ url_for('delete', user_id=usuarios.id) }}" method="POST" class="ms-1">
+              <fieldset>
+                {{ formCreateUser.csrf_token }}
+                {{ formCreateUser.button_delete(class='btn btn-danger') }}
+              </fieldset>
+            </form>
+          </td>
+        </tr>
       {% endfor %}
     </tbody>
 

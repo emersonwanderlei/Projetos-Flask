@@ -7,3 +7,5 @@ class Form_create_user(FlaskForm):
     email = EmailField('Email', validators=[DataRequired(), Email()])
     phone = StringField('Contato', validators=[DataRequired()])
     button_create = SubmitField('Adicionar')
+    button_update = SubmitField('Editar')
+    button_delete = SubmitField('Deletar')

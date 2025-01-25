@@ -1,5 +1,5 @@
 
-<form method="post" class="mb-3">
+<form action="{{ url_for('create') }}" method="post" class="mb-3">
     <fieldset>
         {{ formCreateUser.csrf_token }}
         <div class="container text-center">
