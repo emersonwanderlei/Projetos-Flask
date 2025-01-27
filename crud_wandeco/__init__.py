@@ -4,7 +4,7 @@ from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SECRET_KEY'] = '12345679-75'
+app.config['SECRET_KEY'] = 'SVvFhRr5BhoSX5bZPGlNf7kQW1wPoamE'
 
 
 csrf = CSRFProtect(app)
