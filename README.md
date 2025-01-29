@@ -1,7 +1,6 @@
 # Projetos-Flask
  Esse repositório é para meus projetos e aulas no flask
 
-```markdown
 # Cadastro de Secretários
 
 Este é um projeto simples de um sistema de gerenciamento de dados de secretários(as).  
